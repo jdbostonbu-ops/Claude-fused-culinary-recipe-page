@@ -12,7 +12,7 @@ const recipes = [
         title: "Pan-Seared Scallops", 
         time: "15 Min", 
         difficulty: "Medium", 
-        img: "https://images.unsplash.com/photo-1599321955726-e048426594af?auto=format&fit=crop&w=600&q=80", 
+        img: "src/pansearedscallops.jpg", 
         ingredients: ["King Scallops", "Cauliflower Purée", "Pancetta", "Microgreens"],
         instructions: "<p>1. Pat the king scallops completely dry and season with salt and white pepper.</p><p>2. Sear in a smoking-hot cast-iron skillet with clarified butter for 90 seconds per side until a deep crust forms.</p><p>3. Plate over a warm bed of silky cauliflower purée.</p><p>4. Garnish with crispy rendered pancetta bits and fresh microgreens.</p>"
     },
@@ -52,7 +52,7 @@ const recipes = [
         title: "Charred Octopus", 
         time: "60 Min", 
         difficulty: "Hard", 
-        img: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=600&q=80", 
+        img: "src/octopus.jpg", 
         ingredients: ["Spanish Octopus", "Romesco Sauce", "Fingerling Potatoes", "Smoked Paprika"],
         instructions: "<p>1. Braise the octopus tentacles in a court-bouillon with a wine cork until tender, roughly 45 to 55 minutes.</p><p>2. Let the octopus cool slightly, then char over a smoking-hot binchotan or gas grill for 60 seconds per side.</p><p>3. Smear a generous spoonful of Romesco sauce on the base of the serving plate.</p><p>4. Lay the charred octopus over the sauce and accompany with blistered fingerling potatoes.</p>"
     },
@@ -68,25 +68,25 @@ const recipes = [
         title: "Oyster Emulsion", 
         time: "20 Min", 
         difficulty: "Expert", 
-        img: "https://images.unsplash.com/photo-1615870216519-2f9fa575fa5c?auto=format&fit=crop&w=600&q=80", 
+        img: "src/Turbotoyster.webp", 
         ingredients: ["Kumamoto Oysters", "Yuzu Kosho", "Cucumber Foam", "Dill Oil"],
-        instructions: "<p>1. Shuck the oysters, reserving all the liquor and juices for the emulsion base.</p><p>2. Blend the oysters and their liquor with a touch of yuzu kosho and neutral oil until a creamy mayonnaise-like consistency is achieved.</p><p>3. Create cucumber foam with a hand blender and soy lecithin.</p><p>4. Plate the fresh oyster, top with a small quenelle of the emulsion, and drop the foam alongside.</p>"
+        instructions: "<p>1. Shuck the oysters, reserving all the liquor, butter and juices for the emulsion base.</p><p>2. Blend the oysters and their liquor with a touch of yuzu kosho and neutral oil until a creamy mayonnaise-like consistency is achieved.</p><p>3. Create cucumber foam with a hand blender and soy lecithin.</p><p>4. Plate the fresh oyster, top with a small quenelle of the emulsion, and drop the foam alongside.</p>"
     },
     { 
         title: "Truffle Tagliatelle", 
         time: "25 Min", 
         difficulty: "Medium", 
-        img: "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=600&q=80", 
+        img: "src/truffletagliatelle.jpg", 
         ingredients: ["Fresh Pasta", "White Truffle", "Butter Emulsion", "Pecorino"],
         instructions: "<p>1. Roll and cut the fresh tagliatelle dough to an exact 2mm thickness.</p><p>2. Cook the pasta in heavily salted, boiling water for precisely 90 seconds.</p><p>3. Toss the pasta into a hot pan with a small amount of the pasta water and cultured butter to build a luscious emulsion.</p><p>4. Plate the pasta, shave fresh white truffles over the top, and finish with freshly grated Pecorino Romano.</p>"
     },
     { 
-        title: "Beetroot Textures", 
+        title: "Beetroot Salad", 
         time: "50 Min", 
         difficulty: "Medium", 
-        img: "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=600&q=80", 
+        img: "src/beetsalad.jpg", 
         ingredients: ["Heirloom Beets", "Goat Cheese Snow", "Pistachio Sand", "Balsamic Caviar"],
-        instructions: "<p>1. Roast heirloom beets in their skins until fully tender, then peel and cube or slice them into geometric shapes.</p><p>2. Create the goat cheese snow by piping a mixture of goat cheese and cream through an iSi whipping siphon and freezing it in liquid nitrogen.</p><p>3. Construct balsamic pearls through reverse spherification and sprinkle toasted pistachio sand on the plate.</p>"
+        instructions: "<p>1. Roast heirloom beets in their skins until fully tender, then peel and cube or slice them into geometric shapes.</p><p>2. Create the fetta cheese snow by piping a mixture of fetta cheese and cream through an iSi whipping siphon and freezing it in liquid nitrogen.</p><p>3. Construct balsamic pearls through reverse spherification and sprinkle toasted pistachio sand on the plate.</p>"
     },
     { 
         title: "Pork Belly Bao", 
@@ -116,7 +116,7 @@ const recipes = [
         title: "King Crab Legs", 
         time: "30 Min", 
         difficulty: "Medium", 
-        img: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=600&q=80", 
+        img: "src/kingcrablegs.jpg", 
         ingredients: ["Alaskan King Crab", "Clarified Butter", "Lemon Ash", "Chives"],
         instructions: "<p>1. Carefully crack open the King Crab legs using kitchen shears to extract the pristine meat.</p><p>2. Warm the meat in a gentle sous-vide bath or steamer at 140°F (60°C) with a brush of clarified butter.</p><p>3. Plate the warm crab meat and sprinkle a pinch of bright lemon ash over it for a citrus-infused earthy note.</p><p>4. Garnish with minced chives.</p>"
     },
@@ -140,7 +140,7 @@ const recipes = [
         title: "Pigeon Pithivier", 
         time: "120 Min", 
         difficulty: "Expert", 
-        img: "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=600&q=80", 
+        img: "src/pigeonpithivier.webp", 
         ingredients: ["Squab", "Puff Pastry", "Cabbage", "Mushroom Duxelles"],
         instructions: "<p>1. Roast the squab breasts until just undercooked, and prepare a dense mushroom duxelles with caramelized shallots.</p><p>2. Wrap the squab meat along with the duxelles in puff pastry to form a classical Pithivier dome.</p><p>3. Brush with an egg wash and score the top of the pastry in an elegant curved pattern.</p><p>4. Bake at 425°F (220°C) for 25 minutes until the pastry is highly puffed and flaky.</p>"
     },
