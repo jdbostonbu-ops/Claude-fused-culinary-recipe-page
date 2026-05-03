@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinematic Gastronomy | Premium Catalog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Culinary Geometry</h1>
+            <p class="hero-subtitle">A cinematic exploration of taste and visual form.</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="grid-container" id="recipe-grid" aria-label="Interactive Recipe Catalog">
+            </section>
+    </main>
+
+    <div id="recipe-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-overlay" id="modal-overlay" aria-label="Close modal"></div>
+        <div class="modal-content">
+            <button class="close-btn" id="close-modal" aria-label="Close Full Recipe">&times;</button>
+            <img id="modal-img" src="" alt="" class="modal-image">
+            <div class="modal-body">
+                <h2 id="modal-title" class="modal-title"></h2>
+                <div class="recipe-meta modal-meta">
+                    <span id="modal-time"></span>
+                    <span id="modal-difficulty"></span>
+                </div>
+                
+                <div class="modal-section">
+                    <h3>Ingredients</h3>
+                    <ul id="modal-ingredients" class="recipe-ingredients"></ul>
+                </div>
+                
+                <div class="modal-section">
+                    <h3>Preparation</h3>
+                    <div id="modal-instructions" class="modal-instructions">
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
