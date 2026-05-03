@@ -4,7 +4,7 @@ const recipes = [
         title: "Smoked Wagyu Tartare", 
         time: "25 Min", 
         difficulty: "Expert", 
-        img: "src/alexandra-tran-J2RQT7kJSMM-unsplash.jpg", 
+        img: "src/smokedwagu.jpg", 
         ingredients: ["A5 Wagyu Beef", "Quail Egg", "Truffle Oil", "Capers"],
         instructions: "<p>1. Finely dice the A5 Wagyu beef using a chilled carbon-steel knife to prevent fat rendering.</p><p>2. Fold in the truffle oil, finely minced capers, and sea salt to taste.</p><p>3. Pack the mixture into a ring mold and gently release it in the center of the plate.</p><p>4. Carefully separate the quail egg yolk and rest it atop the tartare before serving with crisp brioche crostini.</p>"
     },
