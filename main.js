@@ -108,7 +108,7 @@ const recipes = [
         title: "Lobster Thermidor", 
         time: "45 Min", 
         difficulty: "Hard", 
-        img: "https://images.unsplash.com/photo-1553659971-f01207815844?auto=format&fit=crop&w=600&q=80", 
+        img: "src/lobsterthermidor.webp", 
         ingredients: ["Maine Lobster", "Gruyère", "Cognac", "Dijon Mustard"],
         instructions: "<p>1. Blanch the lobster in boiling water for 4 minutes; split it in half and remove the meat from the shell.</p><p>2. Create a rich Thermidor sauce using a velouté base, cream, cognac, and Dijon mustard.</p><p>3. Toss the lobster meat into the sauce and place the mixture back into the clean shell halves.</p><p>4. Top with Gruyère cheese and broil until bubbling and golden-brown.</p>"
     },
