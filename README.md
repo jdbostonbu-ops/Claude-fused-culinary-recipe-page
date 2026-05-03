@@ -1,13 +1,13 @@
-# FOLIO — Culinary Archive 🍽️
-A high-performance, visually-driven culinary catalog built as a fusion of three premium design philosophies: Neo-Brutalist typography, Glassmorphic depth, and Cinematic Grid transitions. FOLIO presents 20 essential recipes through immersive 180° card flips, a full-panel recipe modal, and a live filter and search system — all delivered in pure Vanilla HTML, CSS, and JavaScript.
+# Culinary Archive 🍽️
+A high-performance, visually-driven culinary catalog built as a fusion of three premium design philosophies: Neo-Brutalist typography, Glassmorphic depth, and Cinematic Grid transitions.  Culinary Geometry presents 20 essential recipes through immersive 180° card flips, a full-panel recipe modal, and a live filter and search system — all delivered in pure Vanilla HTML, CSS, and JavaScript.
 
 ## 👤 Author
 **Jacqueline**
 [Check out my GitHub Profile](https://github.com/jdbostonbu-ops)
-🚀 **[Launch FOLIO — Culinary Archive](https://jdbostonbu-ops.github.io/Claude-fused-culinary-recipe-page/)**
+🚀 **[Launch — Culinary Archive](https://jdbostonbu-ops.github.io/Claude-fused-culinary-recipe-page/)**
 
 <div align="center">
-  <img src="folio-preview.gif" width="100%" alt="FOLIO Culinary Archive Demo">
+  <img src="premium_photo-1692781059203-3c4e76576845.avif" width="100%" alt="Culinary Archive Demo">
 </div>
 
 ---
