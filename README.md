@@ -1,5 +1,5 @@
 # Culinary Geometry 🍽️
-A high-performance, visually-driven culinary catalog built as a fusion of three premium design philosophies: Neo-Brutalist typography, Glassmorphic depth, and Cinematic Grid transitions. Culinary Geometry presents 20 fine-dining recipes through immersive 180° card flips, a full-panel recipe modal, and a cinematic scroll-reveal entrance — all delivered in pure Vanilla HTML, CSS, and JavaScript with zero dependencies.
+A high-performance, visually-driven culinary catalog built as a fusion of three premium design philosophies: Neo-Brutalist typography, Glassmorphic depth, and Cinematic Grid transitions during an AI prompt asking AI to select one choice but in my prompt, I also took pieces of each option using one word from each option to examine if AI would combine all three. Culinary Geometry presents 20 fine-dining recipes through immersive 180° card flips, a full-panel recipe modal, and a cinematic scroll-reveal entrance — all delivered in pure Vanilla HTML, CSS, and JavaScript with zero dependencies.
 
 ## 👤 Author
 **Jacqueline**

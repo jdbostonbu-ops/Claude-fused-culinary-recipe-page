@@ -275,3 +275,208 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+// Newsletter form handler
+function handleNewsletter(e) {
+    e.preventDefault();
+    document.querySelector('.newsletter-form').style.display = 'none';
+    document.getElementById('newsletterThanks').style.display = 'block';
+}
+
+// ── BOOKING CARD ──
+function openBookingCard() {
+    const wrap = document.getElementById('bookingCardWrap');
+    const card = document.getElementById('bookingCard');
+    document.getElementById('eventCardWrap').style.display = 'none';
+    wrap.style.display = 'block';
+    wrap.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    // spin animation on the front, then flip
+    const front = card.querySelector('.flip-card-front');
+    front.style.transition = 'transform 0.6s cubic-bezier(0.4,0,0.2,1)';
+    front.style.transform = 'rotateY(360deg)';
+    setTimeout(() => {
+        front.style.transform = '';
+        front.style.transition = '';
+        card.classList.add('is-flipped');
+    }, 650);
+}
+
+function closeBookingCard() {
+    const wrap = document.getElementById('bookingCardWrap');
+    const card = document.getElementById('bookingCard');
+    card.classList.remove('is-flipped');
+    setTimeout(() => {
+        wrap.style.display = 'none';
+        const form = document.getElementById('bookingForm');
+        const thanks = document.getElementById('bookingThanks');
+        if (form) { form.style.display = ''; form.reset(); }
+        if (thanks) thanks.style.display = 'none';
+    }, 500);
+}
+
+function submitBooking(e) {
+    e.preventDefault();
+    document.getElementById('bookingForm').style.display = 'none';
+    document.getElementById('bookingThanks').style.display = 'block';
+}
+
+// ── EVENT CALENDAR ──
+const bookedDates = new Set([3, 7, 8, 14, 15, 21, 22, 28]);
+const availableSlots = {
+    1:  ['6:00 PM', '7:00 PM', '8:00 PM'],
+    2:  ['6:30 PM', '8:00 PM'],
+    4:  ['6:00 PM', '7:30 PM'],
+    5:  ['7:00 PM', '8:30 PM'],
+    6:  ['6:00 PM', '7:00 PM', '8:00 PM'],
+    9:  ['6:30 PM', '7:30 PM'],
+    10: ['6:00 PM', '8:00 PM'],
+    11: ['7:00 PM', '8:30 PM'],
+    12: ['6:00 PM', '7:00 PM'],
+    13: ['7:30 PM'],
+    16: ['6:00 PM', '7:00 PM', '8:00 PM'],
+    17: ['6:30 PM', '8:30 PM'],
+    18: ['7:00 PM'],
+    19: ['6:00 PM', '7:30 PM'],
+    20: ['6:00 PM', '7:00 PM', '8:00 PM'],
+    23: ['7:00 PM', '8:00 PM'],
+    24: ['6:00 PM', '7:30 PM'],
+    25: ['6:30 PM', '8:00 PM'],
+    26: ['7:00 PM'],
+    27: ['6:00 PM', '7:00 PM', '8:30 PM'],
+};
+
+let currentMonth = new Date().getMonth();
+let currentYear = new Date().getFullYear();
+let selectedDay = null;
+let selectedTime = null;
+
+function openEventCard() {
+    const wrap = document.getElementById('eventCardWrap');
+    const card = document.getElementById('eventCard');
+    document.getElementById('bookingCardWrap').style.display = 'none';
+    wrap.style.display = 'block';
+    wrap.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    const front = card.querySelector('.flip-card-front');
+    front.style.transition = 'transform 0.6s cubic-bezier(0.4,0,0.2,1)';
+    front.style.transform = 'rotateY(360deg)';
+    setTimeout(() => {
+        front.style.transform = '';
+        front.style.transition = '';
+        card.classList.add('is-flipped');
+        renderCalendar();
+    }, 650);
+}
+
+function closeEventCard() {
+    const wrap = document.getElementById('eventCardWrap');
+    const card = document.getElementById('eventCard');
+    card.classList.remove('is-flipped');
+    setTimeout(() => {
+        wrap.style.display = 'none';
+        const ef = document.getElementById('eventForm');
+        const et = document.getElementById('eventThanks');
+        const ea = document.getElementById('eventFormActions');
+        const ts = document.getElementById('timeSlotsWrap');
+        if (ef) ef.style.display = 'none';
+        if (et) et.style.display = 'none';
+        if (ea) ea.style.display = 'none';
+        if (ts) ts.style.display = 'none';
+        selectedDay = null;
+        selectedTime = null;
+    }, 500);
+}
+
+function changeMonth(dir) {
+    currentMonth += dir;
+    if (currentMonth > 11) { currentMonth = 0; currentYear++; }
+    if (currentMonth < 0)  { currentMonth = 11; currentYear--; }
+    selectedDay = null;
+    selectedTime = null;
+    document.getElementById('timeSlotsWrap').style.display = 'none';
+    document.getElementById('eventFormActions').style.display = 'none';
+    renderCalendar();
+}
+
+function renderCalendar() {
+    const monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    document.getElementById('calMonthLabel').textContent = `${monthNames[currentMonth]} ${currentYear}`;
+    const grid = document.getElementById('calGrid');
+    grid.innerHTML = '';
+    const dayNames = ['Su','Mo','Tu','We','Th','Fr','Sa'];
+    dayNames.forEach(d => {
+        const el = document.createElement('div');
+        el.className = 'cal-day-name';
+        el.textContent = d;
+        grid.appendChild(el);
+    });
+    const firstDay = new Date(currentYear, currentMonth, 1).getDay();
+    const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+    const today = new Date();
+    for (let i = 0; i < firstDay; i++) {
+        const el = document.createElement('div');
+        el.className = 'cal-day empty';
+        grid.appendChild(el);
+    }
+    for (let d = 1; d <= daysInMonth; d++) {
+        const el = document.createElement('div');
+        const thisDate = new Date(currentYear, currentMonth, d);
+        const isPast = thisDate < new Date(today.getFullYear(), today.getMonth(), today.getDate());
+        const isBooked = bookedDates.has(d);
+        el.className = 'cal-day';
+        el.textContent = d;
+        if (isPast) {
+            el.classList.add('past');
+        } else if (isBooked) {
+            el.classList.add('booked');
+            el.title = 'Fully booked';
+        } else {
+            el.classList.add('available');
+            if (selectedDay === d) el.classList.add('selected');
+            el.addEventListener('click', () => selectDay(d, el));
+        }
+        grid.appendChild(el);
+    }
+}
+
+function selectDay(day, el) {
+    selectedDay = day;
+    selectedTime = null;
+    document.querySelectorAll('.cal-day').forEach(d => d.classList.remove('selected'));
+    el.classList.add('selected');
+    const monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    const slotsWrap = document.getElementById('timeSlotsWrap');
+    const slotsLabel = document.getElementById('timeSlotsLabel');
+    const slots = document.getElementById('timeSlots');
+    const actions = document.getElementById('eventFormActions');
+    slotsLabel.textContent = `Available times — ${monthNames[currentMonth]} ${day}`;
+    slots.innerHTML = '';
+    const times = availableSlots[day] || [];
+    if (times.length === 0) {
+        slots.innerHTML = '<span style="font-size:0.75rem;color:#555;">No times available for this date.</span>';
+    } else {
+        times.forEach(t => {
+            const btn = document.createElement('button');
+            btn.className = 'time-slot';
+            btn.textContent = t;
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected'));
+                btn.classList.add('selected');
+                selectedTime = t;
+                actions.style.display = 'flex';
+            });
+            slots.appendChild(btn);
+        });
+    }
+    slotsWrap.style.display = 'block';
+    actions.style.display = 'none';
+}
+
+function showEventForm() {
+    document.getElementById('eventFormActions').style.display = 'none';
+    document.getElementById('eventForm').style.display = 'block';
+}
+
+function submitEvent(e) {
+    e.preventDefault();
+    document.getElementById('eventForm').style.display = 'none';
+    document.getElementById('eventThanks').style.display = 'block';
+}
