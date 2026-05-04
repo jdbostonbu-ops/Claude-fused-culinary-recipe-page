@@ -85,7 +85,7 @@ const recipes = [
         time: "50 Min", 
         difficulty: "Medium", 
         img: "src/beetsalad.jpg", 
-        ingredients: ["Heirloom Beets", "Goat Cheese Snow", "Pistachio Sand", "Balsamic Caviar"],
+        ingredients: ["Heirloom Beets", "Fetta Cheese", "Pistachio Sand", "Balsamic Caviar"],
         instructions: "<p>1. Roast heirloom beets in their skins until fully tender, then peel and cube or slice them into geometric shapes.</p><p>2. Create the fetta cheese snow by piping a mixture of fetta cheese and cream through an iSi whipping siphon and freezing it in liquid nitrogen.</p><p>3. Construct balsamic pearls through reverse spherification and sprinkle toasted pistachio sand on the plate.</p>"
     },
     { 
