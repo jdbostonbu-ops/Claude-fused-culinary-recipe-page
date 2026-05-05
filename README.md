@@ -1,5 +1,7 @@
 # Culinary Geometry 🍽️
-A high-performance, visually-driven culinary catalog built as a fusion of three premium design philosophies: Neo-Brutalist typography, Glassmorphic depth, and Cinematic Grid transitions during an AI prompt asking AI to select one choice but in my prompt, I also took pieces of each option using one word from each option to examine if AI would combine all three. Culinary Geometry presents 20 fine-dining recipes through immersive 180° card flips, a full-panel recipe modal, and a cinematic scroll-reveal entrance — all delivered in pure Vanilla HTML, CSS, and JavaScript with zero dependencies.
+A high-performance, visually-driven culinary catalog built as a fusion of three premium design philosophies: Neo-Brutalist typography, Glassmorphic depth, and Cinematic Grid transitions during an AI prompt asking AI to select one choice but in my prompt, I also took pieces of each option using one word from each option to examine if AI would combine all three. Culinary Geometry presents 20 fine-dining recipes through immersive 180° card flips by instruction, a full-panel recipe modal, and a cinematic scroll-reveal entrance — all delivered in pure Vanilla HTML, CSS, and JavaScript with zero dependencies.
+
+This project is a deliverable of **Phase I: Thinking with AI — Forms + DOM Basics + CSS**, the lab series focused on extending HTML structure with interactive forms, manipulating the page through the DOM, and styling everything through Vanilla CSS. Every feature below — from the modal focus management to the grid event delegation to the custom scrollbar styling — connects directly back to one of the lab's core skill areas.
 
 ## 👤 Author
 **Jacqueline**
@@ -9,6 +11,35 @@ A high-performance, visually-driven culinary catalog built as a fusion of three 
 <div align="center">
   <img src="src/Screen Recording 2026-05-03 at 2.58.41 PM.gif" width="100%" alt="Culinary Geometry Demo">
 </div>
+
+---
+
+# 🎓 Built During Phase I: Thinking with AI — Forms + DOM Basics + CSS
+
+This project is the capstone deliverable for **Phase I of Thinking with AI: Forms + DOM Basics + CSS**. The lab focused on three connected skill areas, and this build exercises all three:
+
+### Forms
+- Form-style interactive elements throughout — tag selection on cards, contact section inputs, modal close controls, all with proper labels and `aria-label` attributes
+- Focus management — `closeBtn.focus()` on modal open, focus restoration on close, `Escape` key handling
+
+### DOM Basics
+- Dynamic content injection — all 20 recipe cards rendered via JavaScript at runtime instead of hand-coded in HTML
+- Event delegation on the grid container — one listener handles clicks across all 20 cards
+- DOM querying with `querySelector`, attribute manipulation with `setAttribute`, class toggling with `classList`
+- `IntersectionObserver` for scroll-triggered animations — modern Web API, not jQuery
+- `scrollIntoView({ behavior: 'smooth' })` for the contact link
+
+### CSS
+- Custom properties (CSS variables) for theming
+- CSS Grid with `auto-fill` and `minmax` for responsive card layout
+- 3D transforms (`transform-style: preserve-3d`, `backface-visibility: hidden`) for the card flip
+- `clip-path` polygon animation for cinematic entrances
+- `backdrop-filter: blur` for the glassmorphic modal overlay
+- `@keyframes` and `cubic-bezier` easing for custom motion curves
+- `clamp()` for fluid typography
+- Custom scrollbar styling with `scrollbar-color` and `scrollbar-width`
+
+The project began with structural HTML exercises and evolved through repeated cycles of prompting AI, evaluating output, refining details, and pushing back when something didn't match the vision — fusing three distinct design philosophies into one cohesive aesthetic.
 
 ---
 
